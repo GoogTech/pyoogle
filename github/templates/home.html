@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+<!-- 引入公共模板 -->
+{% block content %}
+    <div class="container;card-columns">
+        <div class="row">
+            {% for user in api_content %}
+            <div>
+            <div class="card-body" style="width: 10rem;">
+                <a href="{{ user.html_url }}">
+                    <img src="{{ user.avatar_url }}" class="card-img-top" alt="Card image cap">
+                    <div class="card-body">
+                    <p class="card-text">{{ user.login }}</p>
+                    </div>
+                </a>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
